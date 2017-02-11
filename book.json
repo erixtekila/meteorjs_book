@@ -1,0 +1,27 @@
+{
+    "title" : "Meteor in heaven",
+    "author" : "Eric Priou aka erixtekila",
+    "version": ">= 3.x.x",
+    "links": {
+        "sidebar":
+        {
+            "Centre de formation Mediabox": "http://www.mediabox.fr"
+        }
+        ,"sharing": {
+            "weibo": null
+        }
+    },
+    "plugins": [
+        "-mathjax",
+        "-infinitescroll",
+        "richquotes",
+        "jsbin",
+        "anchors"
+    ],
+    "pluginsConfig": {
+        "fontSettings": {
+            "theme": "white",
+            "family": "sans"
+        }
+    }
+}
