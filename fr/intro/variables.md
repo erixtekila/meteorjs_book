@@ -4,6 +4,7 @@
 
 ### block
 Portée de block `{}` plutôt que portée lexicale.
+Cette portée complète la portée lexicale des fonctions
 
 ```js
 // Blocks
@@ -51,6 +52,8 @@ for (let i = 1; i < 6; i++)
 console.log(i); //=> error/undefined -- safe
 ```
 
+> **Warning** Re-déclarer une variable du même nom dans une même portée, provoque une `SyntaxError`
+
 ## Subtilités de `const`
 
 Attention, les valeurs constantes ne fonctionnent que sur les valeurs primitives, pas les référénces.
@@ -69,7 +72,25 @@ prof.name = "Eric";
 
 > **Warning** Affecter une `const` après son initialisation echoue silencieusement (ou bruillament – par une exception – en `strict mode`)
 
+<p/>
+
+> **Warning** Toute constante doit posséder une valeur, à la déclalaration : 
+```js
+const lookMaNoValue;  // SyntaxError, you troublemaker 
+```
+
 ## Temporal Dead Zone
+
+Lorsque la variable est dans la portée, mais non initialisée, elle appartient à la _Temporal Dead Zone_.
+
+```js
+function update()
+{
+  console.log("current time:", t);  // ReferenceError
+  ...
+  let t = readTachymeter();
+}
+```
 
 > **TODO** See [ES6 Let, Const and the “Temporal Dead Zone” (TDZ) in Depth](https://ponyfoo.com/articles/es6-let-const-and-temporal-dead-zone-in-depth)
 
@@ -77,4 +98,4 @@ prof.name = "Eric";
 ## Références
 
 - [Introduction to ES2015](https://tutor.mantrajs.com/say-hello-to-ES2015/let-const)
-- 
+- [ES6 In Depth: let and const](https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/)
