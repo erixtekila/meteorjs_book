@@ -8,8 +8,14 @@
 	* [Classes](intro/class.md)
 	* [Modularité](intro/modules.md)
 * [Nouveautés de la version 1.4](whats_new/README.md)
-* [Angular in meteor](angular/README.md)
+	* [Modularité NPM](whats_new/npm.md) 
+	* [Angular in meteor](whats_new/angular.md)
 * [Bonnes pratiques](best_practices/README.md)
+	* [Conventions](best_practices/conventions.md)
+	* [Structuration des projets](best_practices/structuration.md)
+	* [Reactivité](best_practices/reactivity.md)
+	* [Sécurité](best_practices/security.md)
+	* [Mobile](best_practices/mobile.md)
 * [Références](references.md)
 
 
