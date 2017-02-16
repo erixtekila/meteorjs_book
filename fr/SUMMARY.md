@@ -9,6 +9,7 @@
 	* [Modularité](intro/modules.md)
 * [Nouveautés de la version 1.4](whats_new/README.md)
 	* [Modularité NPM](whats_new/npm.md) 
+	* [Interface utilisateur dynamique](whats_new/ui.md)
 	* [Angular in meteor](whats_new/angular.md)
 * [Bonnes pratiques](best_practices/README.md)
 	* [Conventions](best_practices/conventions.md)
