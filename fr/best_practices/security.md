@@ -1,3 +1,7 @@
+##
+autopublish
+insecure
+
 ## Références
 
 - [Keep It Secret, Keep It Safe](http://www.east5th.co/blog/2015/05/25/keep-it-secret-keep-it-safe/)

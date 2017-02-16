@@ -18,7 +18,7 @@ meteor add nom_du_package
 
 Après une installation réussie, les dépendances de ce dernier se trouvaient disponibles à l'utilisation. En effet, elles résidaient dans un répertoire invisible, nommé `.meteor`, situé à la racine du projet.
 
-Dans ce répertoire, un fichier texte `package` liste toutes les dépendances utilisées. D'ailleurs, vous pouvez intervenir directement dessus, et supprimer les dépendances inutiles ; le compilateur `meteor`les supprimera automatiquement.
+Dans ce répertoire, un fichier texte `packages` liste toutes les dépendances utilisées. D'ailleurs, vous pouvez intervenir directement dessus, et supprimer les dépendances inutiles ; le compilateur `meteor`les supprimera automatiquement.
 
 ## Package `npm`
 

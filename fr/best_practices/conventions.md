@@ -37,7 +37,7 @@ Le nom des méthodes et publications names devraient adopter _CamelCase_, et uti
 Le code devrait être organisé uniquement en modules, chargé depuis des clauses d'`import`.
 Voir [l'intégration de NPM](../best_practices/structuration.md) pour une description sur le découpage des applications en modules.
 
-Les ficiers devraient porter le même nom (en capitale si besoin) que le composant ou la classe qu'ils incluent.
+Les fichiers devraient porter le même nom (en capitale si besoin) que le composant ou la classe qu'ils incluent.
 
 ```js
 export default class ClickCounter { ... }
