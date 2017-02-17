@@ -33,7 +33,6 @@
 	* [Conventions](best_practices/conventions.md)
 	* [Structuration des projets](best_practices/structuration.md)
 	* [Reactivité](best_practices/reactivity.md)
-	* [Publication vs Method](best_practices/pubsub_methods.md)
 	* [Sécurité](best_practices/security.md)
 	* [Mobile](best_practices/mobile.md)
 * [Références](references.md)
