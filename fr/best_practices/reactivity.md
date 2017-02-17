@@ -116,7 +116,13 @@ Les `Dependency` référencent donc leur `Computation`.
 
 ### `invalidate()`
 
-Ce message permet d'éviter de notifier plusieurs fois pour la même modification de valeur.
+Cette méthode permet d'éviter de notifier plusieurs fois pour la même modification de valeur.
+
+```js
+computation.invalidate();// autorun reactive : 1
+
+computation.invalidate(); computation.invalidate(); computation.invalidate(); // autorun reactive : 1
+```
 
 
 ## Références
