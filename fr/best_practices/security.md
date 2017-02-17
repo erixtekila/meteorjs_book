@@ -33,6 +33,43 @@ _See demos/reactive_methods_ pour un exemple complet de la méthodologie (que l'
 ![chrome devtools](../images/chrome_devtools.png) 
 
 
+## Sécurité des méthodes 
+
+### Valider tous les arguments
+
+Pour cela, il est bon d'installer le package `aldeed:simple-schema` et `mdg:validated-method`. Ce dernier force la validation de tous les arguments passés en paramètres du point d'accès de votre méthode distante.
+
+```js
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+export const updateText = new ValidatedMethod
+({  name: 'todos.updateText'  ,validate: new SimpleSchema
+  ({    todoId: { type: String },    newText: { type: String }  }).validator()  ,run({ todoId, newText })
+  {    const todo = Todos.findOne(todoId);    if (!todo.editableBy(this.userId))
+    {      throw new Meteor.Error('todos.updateText.unauthorized',        'Cannot edit todos in a private list that is not yours');    }    Todos.update
+    (
+    	todoId
+    	,{      		$set: { text: newText }		}
+	 );
+	}});
+```
+
+### Ne JAMAIS faire confiance à un userId émanant du client
+
+### Créez une méthode par action
+
+### Limitez l'accès trop répétitif (_flood_)
+
+```js
+// Get list of all method names on Listsconst LISTS_METHODS = _.pluck
+([  insert,  makePublic,  makePrivate,  updateName,  remove,], 'name');
+// Only allow 5 list operations per connection per secondDDPRateLimiter.addRule
+({  name(name)
+  {    return _.contains(LISTS_METHODS, name);  },  // Rate limit per connection ID  connectionId() { return true; } }
+ , 5, 1000
+);
+```
+
+
 ## Meteor security checklist
 
 A revoir fréquemment, la [Meteor security checklist](https://guide.meteor.com/security.html#checklist).
