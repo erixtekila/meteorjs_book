@@ -12,16 +12,40 @@
         }
     },
     "plugins": [
-        "-mathjax",
-        "-infinitescroll",
-        "richquotes",
-        "jsbin",
-        "anchors"
+        "-mathjax"
+        ,"-infinitescroll"
+        ,"-anchors"
+        ,"jsbin"
+        ,"sharing"
+        ,"richquotes"
+        ,"page-treeview"
+        ,"-offline"
     ],
-    "pluginsConfig": {
-        "fontSettings": {
+    "pluginsConfig": 
+    {
+        "fontSettings":
+        {
             "theme": "white",
             "family": "sans"
+        }
+        ,"sharing": {
+            "facebook": false,
+            "twitter": true,
+            "google": false,
+            "weibo": false,
+            "instapaper": false,
+            "vk": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper"
+            ]
+        }
+        ,"page-treeview":
+        {
+            "style": "markdown",
+            "copyright": "",
+            "minHeaderCount": "1",
+            "minHeaderDeep": "1"
         }
     }
 }

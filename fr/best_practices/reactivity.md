@@ -2,12 +2,22 @@
 
 ## Valeurs réactives natives
 
-- Collection
+- Les curseur des Collection
 - Session
-- ReactiveVar
-- ReactiveDict
+- ReactiveVar `meteor add reactive-var`
+- ReactiveDict `meteor add reactive-dict`
 
-## Fonctionnement
+> **Note** La différence entre une `ReactiveVar` et une `Session`, corespond au fait que cette dernière est globale à l'application. Cf. [A scoped reactivity](https://dweldon.silvrback.com/scoped-reactivity) 
+
+## Exemple d'une valeur reactive personnalisée
+
+> En programmation réactive, lire une valeur revient à s'abonner à des notifications de changement de cette valeur. Il n'est pas nécessaire de déclarer une fonction, ni de l'activer, cela sera fait automatiquement!
+
+>_stephenwalther.com_
+
+_Cf. demos/04custom_reactivity_
+
+## Le fonctionnement en détails
 
 Lorsqu'une valeur reactive est changée, elle notifie automatiquement chaque élément relié. Cela fonctionne comme les tableaux excel, dans lesquels une modification de cellule peut entrainer celles d'autres, automagiquement.
 
@@ -15,7 +25,7 @@ Mais quel est le principe sous-jacent ?
 Est-ce que c'est un principe efficace ?
 
 
-## Function `autorun`
+### Function `autorun`
 
 ```js
 let reactive = new ReactiveVar( 1 );
@@ -39,9 +49,9 @@ reactive.set(2); // autorun reactive : 2
 
 Quel lien existe t-il entre ces deux valeurs ?
 
-## `Computations`
+### `Computations`
 
-La fonction `Tracker.autorun()` retourne une valeur, que nommée `Computation` dans la terminologie Meteor.
+La fonction `Tracker.autorun()` retourne une valeur, nommée `Computation` dans la terminologie Meteor.
 
 ```js
 let reactive = new ReactiveVar( 1 );
@@ -61,7 +71,7 @@ console.log( computation ); // Tracker.Computation{}
 
 Si par exemple, vous utilisez sa méthode `stop()`, plus aucune réactivité n'est active sur la valeur.
 
-## Valeurs réactives personnalisées ?
+### Valeurs réactives personnalisées ?
 
 ```js
 let reactive = new Tracker.Dependency();
@@ -78,14 +88,23 @@ let computation = Tracker.autorun
 reactive.changed();// autorun reactive called
 ```
 
-## Terminologie
+### Terminologie
 
 1. Les valeurs réactives sont des `Tracker.Dependency`. Elles émettent leur modification de valeur via leur méthode `changed()`
-1. La fonction `Tracker.autorun()` retourne une `Tracker.Computation`. Celle-ci reçoit les messages `changed` depuis sa `Tracker.Dependency`
+1. La fonction `Tracker.autorun()` retourne une `Tracker.Computation`. Celle-ci recevra les messages `changed` depuis sa `Tracker.Dependency`
+La méthode `Tracker.autorun()` crée un contexte réactif, en créant un objet `Tracker.Computation`, qui sera associé avec la fonction passée à `Tracker.autorun()`
+1. Lorsque la méthode `depend()` de la `Tracker.Dependency` est exécutée, elle ajoute l'objet `Tracker.Computation` actuel (grâce à la valeur `Tracker.currentComputation`) à la liste des `Computation` suivies par la `Tracker.Dependency`.
+1. Ensuite, toute exécution de la méthode `changed()` de la `Computation` va systématiquement itérer sur tout les objets `Computation` contenus comme dépendance.
+1. Lorsque la méthode `invalidate()` de l'objet `Computation` est appelée, la fonction qui lui est associée, sera relancée.
 
-## Est-ce optimisé ?
+**Ainsi toute fonction passée à `Tracker.autorun()` sera systématiquement relancée dès qu'une de ses `Dependency` est modifiée.**
 
-### Lien entre la `Dependency` et sa `Computation`
+
+## Reactivity FAQ
+
+### Est-ce optimisé ?
+
+#### Lien entre la `Dependency` et sa `Computation`
 
 ```js
 let reactive = new ReactiveVar(1);
@@ -114,9 +133,16 @@ Les `Dependency` référencent donc leur `Computation`.
 
 **Dès lors, toutes les `Computation` qui se trouvent dans `dep._dependentsById`, sont systématiquement notifiées, lorsque `changed()` depuis est activé.***
 
-### `invalidate()`
+#### `invalidate()` et `Tracker.flush()`
 
-Cette méthode permet d'éviter de notifier plusieurs fois pour la même modification de valeur.
+Le cycle de raffraîchissment des dépendances est effectué par une boucle dépendant de l'horloge système 
+
+`window.setInterval( Tracker.flush, 0 )`;
+
+`Tracker.flush()` active le cycle de raffraichissment des dépendances.
+ 
+
+`invalidate()` permet d'éviter de notifier plusieurs fois pour la même modification de valeur. En effet, elle recquiert que le cycle de dépendance soit relancé, **mais que dans un seul cycle de`Tracker.flush`**.
 
 ```js
 computation.invalidate();// autorun reactive : 1
@@ -124,6 +150,29 @@ computation.invalidate();// autorun reactive : 1
 computation.invalidate(); computation.invalidate(); computation.invalidate(); // autorun reactive : 1
 ```
 
+### Reactivity is composition-able !
+
+[Tel que l'évoque cet article](https://www.discovermeteor.com/blog/reactivity-basics-meteors-magic-demystified/), un des comportement intéressant de la réactivité, c'est qu'elle supporte la composition.
+
+> **Hint** La composition est le fait d'envelopper une fonction dans une autre.
+
+```js
+let getCount = function ()
+{
+  return Session.get('count');
+};
+
+Template.hello.helpers
+({
+	counter:()
+	{
+		console.log('counter helper is running');
+		return getCount();
+	}
+});
+```
+
+> **Warning** La composition ne fonctionne que pour les fonctions…
 
 ## Références
 

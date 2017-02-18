@@ -24,7 +24,7 @@ Bien entendu, non !
 
 > **Hint** Un compromis s'impose : n'utiliser collections qu'en lecture seule et passer par les méthodes pour administer leurs valeurs.
 
-_See demos/reactive_methods_ pour un exemple complet de la méthodologie (que l'on retrouve d'ailleurs en créant son projet avec le _flag_ --full, merci MDG).
+_See demos/03-reactive_methods_ pour un exemple complet de la méthodologie (que l'on retrouve d'ailleurs en créant son projet avec le _flag_ --full, merci MDG).
 
 ### Collections security checks
 
