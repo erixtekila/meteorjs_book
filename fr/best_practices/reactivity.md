@@ -1,5 +1,11 @@
 # What is this "reactivity" after all ?
 
+`Tracker` est la bibliothèque de fonctions qui permettent à la réactivité de fonctionner.
+
+`Tracker` vous confère pratiquement tout la puissance de la [programmation fonctionnelle reactive (FRP)](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754), sans avoir à réécrire votre code tel un flux de données liées (_data flow graph_). 
+
+Combiné à des bibliothèques reposant sur ses principes, vous pourrez construire des applications complexes, événementielles, sans avoir à définir manuellement le code de capture de ces événements.
+
 ## Valeurs réactives natives
 
 - Les curseur des Collection
@@ -179,3 +185,4 @@ Template.hello.helpers
 - [Meteor Reactivity Concepts Explained For Humans](http://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=V8IU-ooJcuI&format=xml)
 - [Reactivity basics](https://www.discovermeteor.com/blog/reactivity-basics-meteors-magic-demystified/)
 - [Don't do, react](http://stephenwalther.com/archive/2014/12/05/dont-do-react-understanding-meteor-reactive-programming)
+- [Meteor Tracker manual](https://github.com/meteor/docs/blob/master/long-form/tracker-manual.md)
