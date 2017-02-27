@@ -36,10 +36,10 @@ et celui IOS
 meteor run ios
 ```
 
-## Déploiement sur périphérique 
+## Déploiement sur périphérique
 
 L'utilisation sur un smartphone nécessite de permettre les requêtes sur votre adresse IP. Par défaut, [Cordova](https://cordova.apache.org/) nécessite de définir une liste d'adresses autorisées.
-A cette fin, créez un fichier `mobile-config.js` à la racine du projet et insérez la ligne suivante 
+A cette fin, créez un fichier `mobile-config.js` à la racine du projet et insérez la ligne suivante
 
 ```js
 App.accessRule('http://[votre ip]:3000/*');
@@ -50,15 +50,15 @@ en prenant bien soin de remplacer votre IP !…
 Sur Android, il faudra également ajouter [le mode debogage USB](http://developer.android.com/tools/device.html) et démarrer votre serveur ainsi
 
 
-## Lancement 
+## Lancement
 
-Android 
+Android
 
 ```sh
 meteor run android-device --mobile-server http://192.168.2.123:3000
 ```
 
-IOS 
+IOS
 
 ```sh
 meteor run ios-device --mobile-server http://192.168.2.123:3000
@@ -67,7 +67,7 @@ meteor run ios-device --mobile-server http://192.168.2.123:3000
 Cette commande ouvre Xcode afin que vous définissiez le périphérique à connecter.
 
 
-## Tips & tricks 
+## Tips & tricks
 
 ### viewport
 
@@ -116,14 +116,14 @@ Pour que des valeurs des collections persistent sur le mobile, il est important 
 
 Cordova propose [plusieurs packages](https://cordova.apache.org/plugins/) pour accéder à la partie hardware du smartphone. Et [MDG certaines intégrations](https://github.com/meteor/mobile-packages)
 
-Par exemple pour des accès à la caméra 
+Par exemple pour des accès à la caméra
 
 ```sh
 meteor add cordova:cordova-plugin-camera@1.2.0
 ```
 
 plus dans le `package.js`
- 
+
 ```js
  Cordova.depends
  ({
@@ -199,7 +199,7 @@ keytool -exportcert -alias nom_de_l_app -file nom_de_l_app.cer
 jarsigner -digestalg SHA1 unaligned.apk nom_de_l_app
 ```
 
-Puis "alignement" de votre application 
+Puis "alignement" de votre application
 
 ```sh
 ~/.meteor/android_bundle/android-sdk/build-tools/21.0.0/zipalign 4 unaligned.apk production.apk
@@ -212,7 +212,7 @@ Puis "alignement" de votre application
 
 1- Posséder un compte développeur Apple.
 
-2- Puis configurer votre [_provisionning profile_](). Cela correspond probablement à la procédure d'alignement nécessaire pour Android.
+2- Puis configurer votre _provisionning profile_. Cela correspond probablement à la procédure d'alignement nécessaire pour Android.
 
 3- Suivre [ce tutorial pour configurer votre soumission d'application](http://codewithchris.com/submit-your-app-to-the-app-store/)
 

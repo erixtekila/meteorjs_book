@@ -1,6 +1,6 @@
 # L'orienté objet en es2015
 
-## Définition 
+## Définition
 
 ```js
 class Vehicle {
@@ -55,7 +55,7 @@ console.log( v1.display() );
 
 > **Note** `super()` permet d'accéder au super constructeur, `super.uneMethode()` à une méthode de la super classe.
 
-## Acesseurs
+## Accesseurs
 
 ```js
 class Vehicle {
@@ -77,5 +77,3 @@ class Vehicle {
 }
 
 ```
-
-

@@ -23,33 +23,33 @@ function getCar(make, model, value)
     return {
         make,
         model,
- 
+
         _value: value,
- 
+
         get value() {
             return this._value;
         },
         set value(value) {
             if (value < 0)
                 throw new Error('invalid value');
- 
+
             this._value = value;
         }
     };
 }
- 
+
 let car = getCar('Kia', 'Sorento', 40000);
- 
+
 // output: 40000
 console.log(car.value);
- 
+
 car.value = 30000;
- 
+
 // error thrown
 car.value = -1;
 ```
 
-## Désconstruction
+## Déconstruction
 
 L'affectation par déconstruction permet d'assigner les propriétés d'un objet ou d'un tableau à des variables basées sur le même nom.
 
@@ -92,7 +92,7 @@ function printName( { name } )
 	console.log( 'Name is: ' + name );
 }
 
-const user = 
+const user =
 {
 	name: 'Eric',
 	age : 20,
@@ -114,7 +114,7 @@ function printUser( [ name, age = 20 ] )
 	console.log( 'Name is: ' + name + ' Age: ' + age );
 }
 ```
- 
+
 ## Spread
 
 L'opérateur `...` (_rest_) est utilisé dans le cas des fonctions dites _variadic_. Ce sont des opérations qui peuvent recevoir un nombre changeant de paramètres.
@@ -158,9 +158,9 @@ Cette syntaxe marche également pour les tableaux
 
 ## Mutabilité
 
-Les foncctions pure en programmation fonctionnelle, ne doivent pas avoir d'effet de bord (side effect). La syntaxe es2015 offre cette fonctionnalité. 
+Les foncctions pure en programmation fonctionnelle, ne doivent pas avoir d'effet de bord (side effect). La syntaxe es2015 offre cette fonctionnalité.
 
-```js 
+```js
 // Objects
 function addMarks( user, marks )
 {
