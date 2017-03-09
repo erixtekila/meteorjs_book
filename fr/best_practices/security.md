@@ -26,6 +26,8 @@ Bien entendu, non !
 
 _See demos/03-reactive_methods_ pour un exemple complet de la méthodologie (que l'on retrouve d'ailleurs en créant son projet avec le _flag_ --full, merci MDG).
 
+![Security dataflow](../images/secure_meteor_dataflow.png)
+
 ### Collections security checks
 
 [L'extension chrome meteor devtools](https://github.com/bakery/meteor-devtools) vous  permet d'observer le niveau de sécurié de votre application, en vous mettant en valeur les failles de sécurité de votre code, en regard des bonnes pratiques.
