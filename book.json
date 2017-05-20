@@ -21,7 +21,7 @@
         ,"page-treeview"
         ,"-offline"
     ],
-    "pluginsConfig": 
+    "pluginsConfig":
     {
         "fontSettings":
         {
@@ -44,8 +44,8 @@
         {
             "style": "markdown",
             "copyright": "",
-            "minHeaderCount": "1",
-            "minHeaderDeep": "1"
+            "minHeaderCount": "2",
+            "minHeaderDeep": "2"
         }
     }
 }

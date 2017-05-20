@@ -16,13 +16,15 @@ meteor remove insecure
 Les collections disposent de mesure de sécurité limitant l'usage depuis le poste client aux methodes `insert`, `update` et `remove`.
 [A l'usage, il s'avère qu'il est très compliqué de sécuriser une application avec ces principes](https://www.discovermeteor.com/blog/allow-deny-challenge-results/).
 
-Ainsi, **MDG et la communauté conseillent vivement de n'utiliser ces méthodes en aucun cas.** 
+Ainsi, **MDG et la communauté conseillent de n'utiliser en aucun cas les méthodes de la classe `Mongo.Collection`.**
 
 Cela veut-il dire qu'il faille éliminer la reactivité de meteor pour autant ?
 
 Bien entendu, non !
 
-> **Hint** Un compromis s'impose : n'utiliser collections qu'en lecture seule et passer par les méthodes pour administer leurs valeurs.
+> **Hint** Un compromis s'impose : n'utiliser collections qu'en lecture seule et passer par les `Meteor.methods()` pour administer leurs valeurs.
+
+![Meteor secure dataflow](../img/secure_meteor_dataflow.png)
 
 _See demos/03-reactive_methods_ pour un exemple complet de la méthodologie (que l'on retrouve d'ailleurs en créant son projet avec le _flag_ --full, merci MDG).
 
@@ -32,10 +34,10 @@ _See demos/03-reactive_methods_ pour un exemple complet de la méthodologie (que
 
 [L'extension chrome meteor devtools](https://github.com/bakery/meteor-devtools) vous  permet d'observer le niveau de sécurié de votre application, en vous mettant en valeur les failles de sécurité de votre code, en regard des bonnes pratiques.
 
-![chrome devtools](../images/chrome_devtools.png) 
+![chrome devtools](../images/chrome_devtools.png)
 
 
-## Sécurité des méthodes 
+## Sécurité des méthodes
 
 ### Valider tous les arguments
 

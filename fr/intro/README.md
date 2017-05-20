@@ -1,11 +1,5 @@
-# Intégration de l'es2015 dans meteor
+# Le web 3.0 : _javascript isomorphic_
 
-- Babel.js (package ecmascript) + polyfill (es5-shim) pour permettre un usage de l'ecmascript moderne
-- **sourcemap** ready pour retrouver le code source originel dans la console du navigateur
-- Compatibilité arrière complète, le code peut hybrider les deux syntaxes
+[Building Isomorphic Apps by Spike Brehm](http://fr.slideshare.net/spikebrehm/building-isomorphic-apps-jsconfasia-2014)
 
-## Références
-
-- [Arunoda Susiripala, Get started with ES2015 (ES6) and Meteor](https://blog.meteor.com/get-started-with-es2015-es6-and-meteor-50186da21a4e?gi=60858c3a04c3)
-- [Nicolás Bevacqua, ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
-- [Mozilla hacks articles, ES6 in depth](https://hacks.mozilla.org/category/es6-in-depth/)
+<iframe src="http://www.slideshare.net/slideshow/embed_code/41747211" width="599" height="487" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//fr.slideshare.net/spikebrehm/building-isomorphic-apps-jsconfasia-2014" title="Building Isomorphic Apps (JSConf.Asia 2014)" target="_blank">Building Isomorphic Apps (JSConf.Asia 2014)</a> </strong> from <strong><a href="//www.slideshare.net/spikebrehm" target="_blank">Spike Brehm</a></strong> </div>

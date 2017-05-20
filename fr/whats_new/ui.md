@@ -29,7 +29,7 @@ Plus d'infos
 
 ## Angular
 
-Angular propose des [arguments HTML complémentaires](https://angular.io/docs/js/latest/guide/cheatsheet.html) pour gérer la logique visuelle. 
+Angular propose des [arguments HTML complémentaires](https://angular.io/docs/js/latest/guide/cheatsheet.html) pour gérer la logique visuelle.
 
 Angular utilise la technique du _2-way databinding_ pour synchroniser les données avec leur affichage.
 
@@ -67,7 +67,7 @@ Il sera donc simple à tester.
 
 Ceux-ci sont intelligents lorsque **leurs données leur sont passées de façon automatique et transparente, depuis un conteneur parent**.
 
-Ce concept provient du découplage des responsabilités d'affichage que l'on retrouve notamment avec [le concept de React de stateless components](Stateless Functional Components in React 0.14).
+Ce concept provient du découplage des responsabilités d'affichage que l'on retrouve notamment avec [le concept de React de stateless components](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d).
 
 
 ## Techniques communes d'affichage

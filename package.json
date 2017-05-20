@@ -6,6 +6,7 @@
     "gitbook-plugin-anchors": "^0.5.0",
     "gitbook-plugin-codeblock-filename": "0.0.6",
     "gitbook-plugin-jsbin": "0.0.12",
+    "gitbook-plugin-page-treeview": "^2.9.7",
     "gitbook-plugin-richquotes": "0.0.7"
   }
 }
