@@ -20,6 +20,7 @@
         ,"richquotes"
         ,"page-treeview"
         ,"-offline"
+        ,"edit-link"
     ],
     "pluginsConfig":
     {
@@ -46,6 +47,15 @@
             "copyright": "",
             "minHeaderCount": "2",
             "minHeaderDeep": "2"
+        }
+        ,"edit-link":
+        {
+            "base": "https://github.com/erixtekila/meteorjs_book/edit/master",
+            "label":
+            {
+                "en": "Edit This Page",
+                "fr": "Editez depuis github"
+            }
         }
     }
 }

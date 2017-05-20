@@ -3,7 +3,10 @@ Bienvenue au paradis es2015 avec meteor.js.
 <img src="images/shadoko.jpg" alt="Professor Shadoko" title="Professor Shadoko" width="100" />
 Il est consultable librement selon la licence Creative Commons. Merci d'y participer, notamment en soumettant des _issues_ ou mieux des _pull requests_.
 
-[Les sources des supports sont disponibles sur github](https://github.com/erixtekila/meteorjs_book.git).
+[Les sources des supports sont disponibles sur github](https://github.com/erixtekila/meteorjs_book.git). Vous avez tout loisir de la cloner, voire proposer des _pull requests_.
+
+[Une version pdf pour ceux qui préfèrent](book_fr.pdf)
+[Une archive des fichiers de démonstration](demos.zip)
 
 > **Note** Ces supports de cours sont évidemment le reflet du travail d'autres auteurs : développeurs, bloggeurs, auteurs de tous poils. Le contenu est original au même titre qu'un remix, mais pas unique. Qu'elle prétention (!). Remercions l'ensemble des contributeurs du monde, les shadoks et autres licornes.
 
